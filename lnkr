@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+install() {
+  local ideaDir
+  ideaDir=$(find "$HOME" -maxdepth 1 -type d -regex '.*/\.*Idea.*' | sort | tail -1)
+  link "$REPOSITORY_ROOT/.ideavimrc" ~/.ideavimrc
+  link "$REPOSITORY_ROOT/custom_keymap.xml" "$ideaDir/config/keymaps/custom_keymap.xml"
+}
+
+source <(curl -Lfs https://git.io/lnkr)

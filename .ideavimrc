@@ -1,0 +1,22 @@
+set clipboard=unnamedplus
+set surround
+set number
+set relativenumber
+
+let mapleader = ","
+nnoremap          <C-e>            6<C-e>
+nnoremap          <C-y>            6<C-y>
+nnoremap          <leader>.        :action VimFilePrevious<cr>
+nnoremap          <leader>c        :action CommentByLineComment<cr>
+nnoremap          <leader>gg       :action FindInPath<cr>
+nnoremap          <leader>uu       :action ShowUsages<cr>
+nnoremap          <leader>ut       :action FindUsages<cr>
+nnoremap          <leader>oi       :action OptimizeImports<cr>
+nnoremap          <leader>re       :action RenameElement<cr>
+nnoremap          <leader>rf       :action RenameFile<cr>
+nnoremap          <leader>rr       :action Run<cr>
+nnoremap          <leader>rc       :action RunConfiguration<cr>
+
+" Bug: Annotation window does not show when options number and relativenumber are set
+nnoremap          <leader>Gb       :set nonu<cr> :set nornu<cr> :action Annotate<cr>:action Annotate<cr>
+nnoremap          <C-l>            :set nu<cr> :set rnu<cr>
